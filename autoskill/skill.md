@@ -52,3 +52,12 @@ When given code to explain:
 - Timing patterns: debouncing, throttling, polling, retries
 - Resource management: cleanup functions, disposal, unsubscribe
 - Configuration: dependency arrays, options objects, defaults
+
+## Critical Rules
+
+1. **Read the code, not the comments** — Comments can be wrong or misleading. Always describe what the code actually does.
+2. **Recognize patterns through obfuscation** — If code implements a known algorithm (FizzBuzz, sorting, etc.), identify it even if minified.
+3. **Flag language-specific traps**:
+   - JavaScript: type coercion with ==, string vs number comparisons, truthy/falsy
+   - Python: mutable default arguments, late binding closures
+   - Go: nil interface vs nil pointer, goroutine leaks
