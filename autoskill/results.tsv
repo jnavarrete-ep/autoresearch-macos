@@ -1,4 +1,6 @@
 commit	pass_rate	status	description
-efd7bad	0.900	keep	baseline
+efd7bad	0.900	keep	baseline (5 benchmarks)
 6d667ba	0.900	discard	add special patterns section (no improvement)
 776ee9e	1.000	keep	expand step 3: control flow, side effects, cleanup, dependencies
+d81206b	0.950	keep	added 5 hard benchmarks (10 total) - skill handles bugs well
+31152e4	1.000	keep	add Always Mention section for patterns, timing, resources, config
