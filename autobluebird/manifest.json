@@ -1,0 +1,19 @@
+{
+  "description": "Benchmark NestJS projects for Bluebird false-positive optimization",
+  "metric": "objective",
+  "metric_direction": "higher_is_better",
+  "alpha": 0.5,
+  "bluebird_bin": "bluebird",
+  "projects": [
+    {
+      "name": "target-project",
+      "path": "",
+      "options": {
+        "includeHeuristic": true,
+        "format": "json",
+        "verbose": true
+      },
+      "notes": "Set 'path' to an absolute path to your NestJS project before running"
+    }
+  ]
+}
