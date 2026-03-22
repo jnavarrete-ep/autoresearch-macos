@@ -4,3 +4,6 @@ efd7bad	0.900	keep	baseline (5 benchmarks)
 776ee9e	1.000	keep	expand step 3: control flow, side effects, cleanup, dependencies
 d81206b	0.950	keep	added 5 hard benchmarks (10 total) - skill handles bugs well
 31152e4	1.000	keep	add Always Mention section for patterns, timing, resources, config
+e2c6348	0.800	keep	added 5 adversarial benchmarks (15 total)
+d267bfb	0.967	keep	add Critical Rules: code>comments, recognize patterns, language traps
+8db2d30	0.800	discard	minor tweak caused variance regression
