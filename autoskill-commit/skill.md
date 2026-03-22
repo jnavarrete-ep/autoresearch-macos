@@ -31,3 +31,10 @@ When given a diff:
 - Subject: no period at the end
 - Subject: max 50 characters
 - Body: explain what and why, not how
+
+## Type Guidelines
+
+- **fix**: Bug fixes. Be specific: "fix null check in calculateTotal" not "fix bug"
+- **feat**: New functionality. Focus on user value, not implementation
+- **refactor**: Code changes that don't affect behavior
+- **feat!** or **BREAKING CHANGE**: When API/behavior changes incompatibly. Always include migration notes in body
