@@ -64,6 +64,97 @@ program.md      — agent instructions
 pyproject.toml  — dependencies
 ```
 
+---
+
+## Autoskill: Evolving Claude Code Skills
+
+This fork extends the autoresearch pattern to **Claude Code skills**. Instead of evolving `train.py` to minimize `val_bpb`, autoskill evolves skill markdown files to maximize benchmark pass rates.
+
+### The Pattern
+
+| Autoresearch | Autoskill |
+|--------------|-----------|
+| `train.py` | `skill.md` |
+| `val_bpb` (lower is better) | `pass_rate` (higher is better) |
+| 5-minute training run | Claude CLI evaluation |
+| Neural network weights | Skill instructions |
+
+### How It Works
+
+```
+┌─────────────────────────────────────────────────┐
+│                 AUTOSKILL LOOP                  │
+├─────────────────────────────────────────────────┤
+│  1. Modify skill.md                             │
+│  2. git commit                                  │
+│  3. uv run evaluate.py  → get pass_rate         │
+│  4. If pass_rate ↑ → keep                       │
+│     If pass_rate ↓ → git reset --hard HEAD~1    │
+│  5. Log to results.tsv                          │
+│  6. GOTO 1                                      │
+└─────────────────────────────────────────────────┘
+```
+
+### Included Skills
+
+| Skill | Directory | Benchmarks | Best Score |
+|-------|-----------|------------|------------|
+| **Code Explainer** | `autoskill/` | 15 | 0.967 |
+| **Commit Writer** | `autoskill-commit/` | 5 | 1.000 |
+| **PR Reviewer** | `autoskill-review/` | 5 | 1.000 |
+
+### Quick Start
+
+```bash
+# Run evaluation for any skill
+uv run autoskill/evaluate.py
+uv run autoskill-commit/evaluate.py
+uv run autoskill-review/evaluate.py
+```
+
+### Creating Your Own Skill
+
+1. Create a directory with:
+   ```
+   my-skill/
+   ├── skill.md           # The skill to evolve
+   ├── evaluate.py        # Evaluation harness
+   ├── results.tsv        # Experiment log
+   └── benchmarks/        # Test cases
+       ├── 01_test.md
+       └── 02_test.md
+   ```
+
+2. Each benchmark has:
+   ```markdown
+   # Benchmark: Name
+
+   ## Input
+   [The input to give the skill]
+
+   ## Expected Behaviors
+   The output MUST:
+   1. Do X
+   2. Include Y
+   3. NOT do Z
+
+   ## Scoring
+   - 1.0: All behaviors present
+   - 0.5: Partial
+   - 0.0: Failed
+   ```
+
+3. Point Claude at your skill's `program.md` equivalent and let it iterate.
+
+### Key Learnings
+
+From evolving these skills, we found:
+
+- **Specific beats generic**: "Use fix: for bugs with specific description" beats "write good commit messages"
+- **Permission to approve**: Adding "LGTM is valid for clean code" prevents over-criticism
+- **Checklists work**: "Always mention X when present" improves consistency
+- **LLM-as-judge has variance**: Run evaluations multiple times; some runs timeout or score differently
+
 ## Design choices
 
 - **Single file to modify.** The agent only touches `train.py`. This keeps the scope manageable and diffs reviewable.
