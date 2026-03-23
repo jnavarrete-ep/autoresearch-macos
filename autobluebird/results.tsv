@@ -1,0 +1,4 @@
+commit	objective	raw_score_avg	calibrated_score_avg	estimated_fp_rate	status	description
+bfd7409	84.000	84.000	84.000	0.0000	baseline	stardust-communication-service only; Bluebird pre-change (stashed); manifest path + includeHeuristic
+bfd7409	88.000	88.000	88.000	0.0000	keep	FP-focused rule updates (local dist/cli.js); CLI entrypoints, missing-indexes, prefer-pagination, ApiOkResponse+HttpCode, skip config validation in *.spec.ts; diags 73→59
+4acebcd	90.438	90.438	90.438	0.0000	keep	enabledWhen gates: no-inconsistent-http-status (strictTS), missing-caching (features.cache), prefer-pagination (>=50 files); 16 projects; v0.1.34

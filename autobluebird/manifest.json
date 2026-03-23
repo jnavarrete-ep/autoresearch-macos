@@ -3,17 +3,103 @@
   "metric": "objective",
   "metric_direction": "higher_is_better",
   "alpha": 0.5,
-  "bluebird_bin": "bluebird",
+  "bluebird_bin": "/Users/jnavarrete/Desktop/code_repos/ai/bluebird/packages/bluebird/dist/cli.js",
   "projects": [
     {
-      "name": "target-project",
-      "path": "",
-      "options": {
-        "includeHeuristic": true,
-        "format": "json",
-        "verbose": true
-      },
-      "notes": "Set 'path' to an absolute path to your NestJS project before running"
+      "name": "stardust-communication-service",
+      "path": "/Users/jnavarrete/Desktop/code_repos/stardust/stardust-communication-service",
+      "options": { "includeHeuristic": true, "format": "json", "verbose": true },
+      "notes": "Endpoint stardust communication NestJS service"
+    },
+    {
+      "name": "stardust-transaction-service",
+      "path": "/Users/jnavarrete/Desktop/code_repos/stardust-transaction-service/stardust-transaction-service",
+      "options": { "includeHeuristic": true, "format": "json", "verbose": true },
+      "notes": "Stardust transaction NestJS service"
+    },
+    {
+      "name": "stardust-task-service",
+      "path": "/Users/jnavarrete/Desktop/code_repos/stardust-task-service/stardust-task-service",
+      "options": { "includeHeuristic": true, "format": "json", "verbose": true },
+      "notes": "Stardust task NestJS service"
+    },
+    {
+      "name": "task-service",
+      "path": "/Users/jnavarrete/Desktop/code_repos/task-service/task-service",
+      "options": { "includeHeuristic": true, "format": "json", "verbose": true },
+      "notes": "Task NestJS service"
+    },
+    {
+      "name": "task-event-processor",
+      "path": "/Users/jnavarrete/Desktop/code_repos/task-event-processor/task-event-processor",
+      "options": { "includeHeuristic": true, "format": "json", "verbose": true },
+      "notes": "Task event processor NestJS service"
+    },
+    {
+      "name": "contact-service",
+      "path": "/Users/jnavarrete/Desktop/code_repos/contact-service/contact-service",
+      "options": { "includeHeuristic": true, "format": "json", "verbose": true },
+      "notes": "Contact NestJS service"
+    },
+    {
+      "name": "notification-service",
+      "path": "/Users/jnavarrete/Desktop/code_repos/notif-service/notification-service",
+      "options": { "includeHeuristic": true, "format": "json", "verbose": true },
+      "notes": "Notification NestJS service"
+    },
+    {
+      "name": "communication-service",
+      "path": "/Users/jnavarrete/Desktop/code_repos/comm-service/communication-service",
+      "options": { "includeHeuristic": true, "format": "json", "verbose": true },
+      "notes": "Communication NestJS service"
+    },
+    {
+      "name": "template-service",
+      "path": "/Users/jnavarrete/Desktop/code_repos/template-service/template-service",
+      "options": { "includeHeuristic": true, "format": "json", "verbose": true },
+      "notes": "Template NestJS service"
+    },
+    {
+      "name": "workflow-service",
+      "path": "/Users/jnavarrete/Desktop/code_repos/workflow/workflow-service",
+      "options": { "includeHeuristic": true, "format": "json", "verbose": true },
+      "notes": "Workflow NestJS service"
+    },
+    {
+      "name": "merge-field-service",
+      "path": "/Users/jnavarrete/Desktop/code_repos/merge-fields/merge-field-service",
+      "options": { "includeHeuristic": true, "format": "json", "verbose": true },
+      "notes": "Merge field NestJS service"
+    },
+    {
+      "name": "audit-service",
+      "path": "/Users/jnavarrete/Desktop/code_repos/audit/audit-service",
+      "options": { "includeHeuristic": true, "format": "json", "verbose": true },
+      "notes": "Audit NestJS service"
+    },
+    {
+      "name": "verse-bff",
+      "path": "/Users/jnavarrete/Desktop/code_repos/verse-bff/verse-bff",
+      "options": { "includeHeuristic": true, "format": "json", "verbose": true },
+      "notes": "Verse BFF NestJS service"
+    },
+    {
+      "name": "endpoint-client-bff",
+      "path": "/Users/jnavarrete/Desktop/code_repos/ep-bff/endpoint-client-bff",
+      "options": { "includeHeuristic": true, "format": "json", "verbose": true },
+      "notes": "Endpoint client BFF NestJS service"
+    },
+    {
+      "name": "endpoint-communication-service",
+      "path": "/Users/jnavarrete/Desktop/code_repos/SPD/endpoint-communication-service",
+      "options": { "includeHeuristic": true, "format": "json", "verbose": true },
+      "notes": "SPD endpoint communication NestJS service"
+    },
+    {
+      "name": "eclipse-documents",
+      "path": "/Users/jnavarrete/Desktop/code_repos/SPD/eclipse-documents",
+      "options": { "includeHeuristic": true, "format": "json", "verbose": true },
+      "notes": "SPD eclipse documents NestJS service"
     }
   ]
 }
