@@ -1,2 +1,5 @@
 commit	pass_rate	status	description
 baseline	0.900	keep	initial skill with claude-opus + codex-5.3-high judges
+0af2a30	0.850	discard	add rules for ALL issues + loop/bounds check (regression)
+40fb8bd	0.900	keep	add explicit guidance on real issues vs style nitpicks
+507a2e4	1.000	keep	expand race condition guidance with how/fix
