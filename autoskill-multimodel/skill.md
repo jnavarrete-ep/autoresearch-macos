@@ -48,7 +48,7 @@ When given code to explain:
 ## Common Bug Patterns
 
 For loops: check both termination condition AND bounds access.
-For async: check for race conditions between read and write.
+For async: check for race conditions (read-modify-write patterns where concurrent calls can interleave). Explain HOW the race occurs and suggest fixes (atomic ops, locks, transactions).
 For property access: check for null/undefined at each level of the chain.
 
 ## What Counts as an Issue
