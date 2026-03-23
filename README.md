@@ -38,6 +38,26 @@ Instead of evolving neural network training code to minimize loss, **autoskill e
 | **Code Explainer** | `autoskill/` | 15 | 0.967 |
 | **Commit Writer** | `autoskill-commit/` | 5 | 1.000 |
 | **PR Reviewer** | `autoskill-review/` | 5 | 1.000 |
+| **Multi-Model** | `autoskill-multimodel/` | 5 | 0.900 |
+
+### Multi-Model Evaluation
+
+`autoskill-multimodel/` uses [counselors](https://github.com/counselors-ai/counselors) to judge with multiple models in parallel:
+
+```bash
+# Uses claude-opus + codex-5.3-high by default
+uv run autoskill-multimodel/evaluate.py
+
+# Custom judges
+JUDGE_TOOLS=claude-opus,claude-sonnet,codex-5.3-high uv run autoskill-multimodel/evaluate.py
+```
+
+Output shows per-model scores:
+```
+[PASS] 01_null_check_bug: 1.00 (34.7s) [claude-opus=1.0, codex-5.3-high=1.0]
+```
+
+Benefits: reduced variance, cross-model validation, bias detection.
 
 ## Quick Start
 
