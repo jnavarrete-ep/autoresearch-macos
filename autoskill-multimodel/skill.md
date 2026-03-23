@@ -42,3 +42,10 @@ When given code to explain:
 - Be accurate — describe what the code does, not what comments say
 - Be specific — reference exact lines and values
 - Flag problems — always mention bugs and security issues
+- List ALL issues found, not just the first one
+- If code is clean and correct, say "None identified" in Issues section
+
+## Common Bug Patterns
+
+For loops: check both termination condition AND bounds access.
+For async: check for race conditions between read and write.
