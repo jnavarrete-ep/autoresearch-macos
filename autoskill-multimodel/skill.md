@@ -49,3 +49,17 @@ When given code to explain:
 
 For loops: check both termination condition AND bounds access.
 For async: check for race conditions between read and write.
+For property access: check for null/undefined at each level of the chain.
+
+## What Counts as an Issue
+
+Real issues to flag:
+- Code that can crash (null access, out of bounds, division by zero)
+- Security vulnerabilities (injection, path traversal)
+- Race conditions that cause incorrect results
+- Infinite loops or hangs
+
+NOT issues (don't flag these):
+- Style preferences
+- Missing features the code wasn't designed for
+- Theoretical edge cases that are clearly outside intended use
