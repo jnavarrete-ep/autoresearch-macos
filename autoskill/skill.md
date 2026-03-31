@@ -61,3 +61,14 @@ When given code to explain:
    - JavaScript: type coercion with ==, string vs number comparisons, truthy/falsy
    - Python: mutable default arguments, late binding closures
    - Go: nil interface vs nil pointer, goroutine leaks
+
+## Security Issues to Always Flag
+
+When analyzing code, explicitly look for:
+
+- **Injection attacks**: SQL injection (f-strings/concat in queries), command injection, XSS
+- **Race conditions**: Check-then-act patterns with shared mutable async state
+- **Resource leaks**: Event listeners not removed, goroutines blocked on channels
+- **ReDoS**: Nested quantifiers in regex ((x+)+, (x*)*) cause exponential backtracking
+- **Backdoors**: Hardcoded credentials, env var bypasses, maintenance modes
+- **Unicode attacks**: RTL override (U+202E), zero-width chars, homoglyphs
