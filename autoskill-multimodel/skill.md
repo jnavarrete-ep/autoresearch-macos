@@ -47,9 +47,11 @@ When given code to explain:
 
 ## Common Bug Patterns
 
-For loops: check both termination condition AND bounds access.
+For loops: check both termination condition AND bounds access. If a loop accesses arr[i] without checking i < len(arr), it can cause IndexError. If the loop condition might never be false, it can cause infinite loops. If a loop searches for something and the target might not exist, note the infinite loop risk. Mention all risks and suggest fixes (bounds check, enumerate, try/catch).
+
 For async: check for race conditions (read-modify-write patterns where concurrent calls can interleave). Explain HOW the race occurs and suggest fixes (atomic ops, locks, transactions).
-For property access: check for null/undefined at each level of the chain.
+
+For property access: check for null/undefined at each level of the chain. If user.profile.name is accessed without checks, flag that user, user.profile, or user.profile.name could be null/undefined causing TypeError. Suggest optional chaining (user?.profile?.name) or explicit null checks.
 
 ## What Counts as an Issue
 
